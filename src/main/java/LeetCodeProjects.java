@@ -245,20 +245,6 @@ public class LeetCodeProjects {
      * @return      the updated head of the new list
      */
     public ListNode reverseList(ListNode head) {
-        /**
-         ListNode curtNode = head;
-         ListNode prevNode = null;
-         ListNode nextNode = null;
-
-         while(curtNode != null) {
-         nextNode = curtNode.next;
-         curtNode.next = prevNode;
-         prevNode = curtNode;
-         curtNode = nextNode;
-         }
-         return prevNode;
-         */
-
         ListNode prevNode = null;
         // base case
         if(head == null || head.next == null) {
@@ -268,12 +254,19 @@ public class LeetCodeProjects {
         // recursive case
         ListNode nextNode = reverseList(head.next);
         head.next.next = head;
-
         head.next = null;
-
         return nextNode;
     }
 
+    /**
+     * This function merges two sorted lists
+     * Two Lists were sorted in a ascending order
+     * the result list should maintain the same order
+     *
+     * @param l1    head of The original list one
+     * @param l2    head of the Original list two
+     * @return      Head of the newly merged sort list
+     */
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         ListNode dummy = new ListNode(0); // help dummy node
         dummy.next = l1;
@@ -284,7 +277,6 @@ public class LeetCodeProjects {
                 ListNode l2Next = l2.next;
                 prev.next = l2;
                 l2.next = l1;
-
                 prev = l2;
                 l1 = prev.next;
                 l2 = l2Next;
@@ -301,6 +293,12 @@ public class LeetCodeProjects {
         return dummy.next;
     }
 
+    /**
+     * This method checks if a linkedList is Palindrome(reverse-equal)
+     *
+     * @param head  head of the linkedList
+     * @return      true if the List is Palindrome
+     */
     public boolean isPalindrome(ListNode head) {
         List<Integer> valList = new ArrayList<>();
         List<Integer> origList = new ArrayList<>();
@@ -325,6 +323,12 @@ public class LeetCodeProjects {
      * }
      */
 
+    /**
+     * Function checks if there is a infinite cycle inside the linkedList
+     *
+     * @param head  head of the list
+     * @return      true if the infinite cycle exists in the linkedList
+     */
     public boolean hasCycle(ListNode head) {
         // fast pointer and slow pointer: if they catch-up, there is a linked list:
         // edge case first:
@@ -339,15 +343,18 @@ public class LeetCodeProjects {
         while(fast != null && fast.next != null) {
             fast = fast.next.next;
             slow = slow.next;
-
             if(fast == slow) {
                 return true;
             }
         }
-
         return false;
     }
 
+    /**
+     * method rotates a image(represented by 2D array)
+     *
+     * @param matrix    2D array represent an image
+     */
     public void rotate(int[][] matrix) {
         int n = matrix.length;
         int cirLeng = matrix.length - 1;
@@ -374,11 +381,18 @@ public class LeetCodeProjects {
 
          [[15,13,2,5],
          [14,3, 4,1],
-         [12,6, 4,9],
+         [12,6, 8,9],
          [16,7,10,11]]
          */
     }
 
+    /**
+     * This function transfers roman integers to arabic digits
+     *
+     * @param s original Roman letter string
+     * @return  the numerical representation of the string
+     *          requires the string to be legit Roman letters
+     */
     public int romanToInt(String s) {
         char[] letters = {'I', 'V', 'X', 'L', 'C', 'D', 'M'};
         int[] vals   =   { 1,   5,  10,  50, 100, 500, 1000};
@@ -411,31 +425,40 @@ public class LeetCodeProjects {
      * Return: a List of Roman letters read from the back to the front
      */
     public List<Character> readStringFromBack(String s) {
-        List<Character> romans = new ArrayList<>();
-        for(int i = 0; i < s.length(); i++) {
-            romans.add(s.charAt(i));
+        List<Character> chars = new ArrayList<>();
+        for(int i = s.length()-1; i > -1; i--) {
+            chars.add(s.charAt(i));
         }
-        Collections.reverse(romans);
-
-        return romans;
+        return chars;
     }
 
+    /**
+     * This method checks if a number is power of three
+     *
+     * @param n number that is in digits
+     * @return  true if it is power of three
+     *          use the log math operation to determine the result
+     */
     public boolean isPowerOfThree(int n) {
         return (Math.log10(n) / Math.log10(3)) % 1 == 0;
     }
 
+    /**
+     * Method finds the common longest prefix among an array of Strings
+     *
+     * @param strs  array of strings
+     * @return      the longest common prefix
+     *              empty string if longest common prefix does not exist
+     */
     public String longestCommonPrefix(String[] strs) {
         StringBuilder result = new StringBuilder();
-
         for(int i=0; ;i++) {
-            if(i >= strs[0].length()) {
+            if(i >= strs[0].length())
                 return result.toString();
-            }
             Character thisChar = strs[0].charAt(i);
             for(String str: strs) {
-                if(i >= str.length() || thisChar != str.charAt(i)) {
+                if(i >= str.length() || thisChar != str.charAt(i))
                     return result.toString();
-                }
             }
             result.append(thisChar);
         }
