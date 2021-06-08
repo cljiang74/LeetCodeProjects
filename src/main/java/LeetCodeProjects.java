@@ -1,8 +1,10 @@
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * This Class contains solution accepted on the LeetCode website
@@ -464,14 +466,21 @@ public class LeetCodeProjects {
         }
     }
 
+    /**
+     * This method plays a simple FizzBuzz game:
+     * Create a list of numbers but replace every multiple
+     * of 3 to Fizz, 5 to Buzz, and 15 to FizzBuZZ
+     *
+     * @param n Length of the list
+     * @return  A list of Strings containing FizzBuzzes
+     */
     public List<String> fizzBuzz(int n) {
         String str1 = "Fizz";
         String str2 = "Buzz";
-        String str3 = "FizzBuzz";
         List<String> result = new ArrayList<>();
         for(int i=1; i<n+1; i++) {
             if(i%3 == 0 && i%5 == 0)
-                result.add(str3);
+                result.add(str1+str2);
             else if(i%3 == 0)
                 result.add(str1);
             else if(i%5 == 0)
@@ -482,10 +491,15 @@ public class LeetCodeProjects {
         return result;
     }
 
+    /**
+     * This function counts number of prime numbers up till number n
+     *
+     * @param n The highest number it counts, inclusive
+     * @return  The number of prime numbers in the list
+     */
     public int countPrimes(int n) {
         int ctr = 0;
         boolean[] isMultiPrime = new boolean[n];
-
         for(int i=2; i<n; i++) { // starting from 2 to n
             if(isMultiPrime[i])    // If it's not prime, to next iter
                 continue;
@@ -493,10 +507,15 @@ public class LeetCodeProjects {
             for(int j=i; j<n; j+=i)
                 isMultiPrime[j] = true; // Mark all multiples of i as non-prime
         }
-
         return ctr;
     }
 
+    /**
+     * Method optimally checks if a number is a prime number
+     *
+     * @param num   input number
+     * @return      true if the number is a prime number
+     */
     private boolean isPrime(int num) {
         //edge cases:
         if(num < 2)
@@ -512,6 +531,13 @@ public class LeetCodeProjects {
         return true;
     }
 
+    /**
+     * This method satisfies the countAndSay problem on Leetcode
+     * Original problem description is relatively long so emitted here
+     *
+     * @param n    number of iterations
+     * @return     output result after counting and saying process
+     */
     public String countAndSay(int n) {
         if(n == 1)
             return "1";
@@ -532,33 +558,110 @@ public class LeetCodeProjects {
         return newRst.toString();
     }
 
+    /**
+     * Given array of numbers, and target value
+     * This function returns an array consist of
+     * two elements representing the index number of the
+     * two numbers that sums up to the target
+     *
+     * @param nums      array of candidate number
+     * @param target    target value
+     * @return          array of indexes
+     */
+    public int[] twoSum(int[] nums, int target) {
+        //brutal force method
+        /**
+         int j;
+         int[] result = new int[2];
+         for(int i = 0; i<nums.length - 1; i++) {
+         j = i+1;
+         while(j < nums.length) {
+         if(nums[i] + nums[j] == target) {
+         result[0] = i;
+         result[1] = j;
+
+         return result;
+         }
+         j++;
+         }
+         }
+         return result;
+         */
+
+        // One-pass hashTable method
+        Map<Integer, Integer> numsMap = new HashMap<>();
+        for(int i=0; i<nums.length; i++) {
+            int y = target - nums[i];
+            if(numsMap.containsKey(y) && numsMap.get(y) != i) {
+                return new int[]{i, numsMap.get(y)};
+            }
+            numsMap.put(nums[i], i);
+        }
+        throw new IllegalArgumentException("No number pair were found!");
+    }
 
     /**
-     * Definition for a binary tree node.
-     * public class TreeNode {
-     *     int val;
-     *     TreeNode left;
-     *     TreeNode right;
-     *     TreeNode() {}
-     *     TreeNode(int val) { this.val = val; }
-     *     TreeNode(int val, TreeNode left, TreeNode right) {
-     *         this.val = val;
-     *         this.left = left;
-     *         this.right = right;
-     *     }
-     * }
+     * Function checks if the Sudoku is valid
+     *
+     * @param board 2d Array representing a sudoku
+     * @return      true if the sudoku is valid
      */
-    public int maxDepth(TreeNode root) {
-        if(root == null) {
-            return 0;
+    public boolean isValidSudoku(char[][] board) {
+        Set sudokuSet = new HashSet();
+        for(int i=0; i<9; i++) {
+            for(int j=0; j<9; j++) {
+                char sudoNum = board[i][j];
+                if(Character.isDigit(sudoNum)) {
+                    if(!sudokuSet.add("row" + i + sudoNum) ||
+                            !sudokuSet.add("col" + j + sudoNum) ||
+                            !sudokuSet.add("Block" + i/3 + j/3 + sudoNum)) {
+                        return false;
+                    }
+                }
+            }
         }
+        return true;
+    }
 
-        int leftDepth = maxDepth(root.left);
-        int rightDepth = maxDepth(root.right);
-
-        if(leftDepth > rightDepth) {
-            return leftDepth + 1;
+    /**
+     * This method reverse a String in-place
+     *
+     * @param s input char array
+     */
+    public void reverseString(char[] s) {
+        int j=s.length-1;
+        char temp;
+        for(int i=0; i<(s.length)/2; i++) {
+            temp = s[i];
+            s[i] = s[j];
+            s[j] = temp;
+            j--;
         }
-        return rightDepth + 1;
+    }
+
+    /**
+     * Given an integer array nums,
+     * move all 0's to the end of it,
+     * while maintaining the relative order of the non-zero elements.
+     *
+     * @param nums input array nums
+     */
+    public void moveZeroes(int[] nums) {
+        List<Integer> numsList = new ArrayList<>();
+        for(int n: nums) {
+            Integer i = n;
+            numsList.add(i);
+        }
+        List<Integer> zerosList = new ArrayList<>();
+        for(Integer n: numsList) {
+            if(n == 0) {
+                zerosList.add(n);
+            }
+        }
+        numsList.removeAll(zerosList);
+        numsList.addAll(zerosList);
+        for(int i=0; i<nums.length; i++) {
+            nums[i] = numsList.get(i);
+        }
     }
 }

@@ -1,7 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="LeetCodeProjectsTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-06-08T19:36:57" hostname="DESKTOP-7UD2T7R" time="0.048">
+<testsuite name="LeetCodeProjectsTest" tests="22" skipped="0" failures="0" errors="0" timestamp="2021-06-08T22:16:53" hostname="DESKTOP-7UD2T7R" time="0.561">
   <properties/>
-  <testcase name="longestCommonPrefix()" classname="LeetCodeProjectsTest" time="0.048"/>
+  <testcase name="moveZeroes()" classname="LeetCodeProjectsTest" time="0.109"/>
+  <testcase name="myAtoi()" classname="LeetCodeProjectsTest" time="0.014"/>
+  <testcase name="rotate()" classname="LeetCodeProjectsTest" time="0.014"/>
+  <testcase name="strStr()" classname="LeetCodeProjectsTest" time="0.008"/>
+  <testcase name="twoSum()" classname="LeetCodeProjectsTest" time="0.009"/>
+  <testcase name="isPalindrome()" classname="LeetCodeProjectsTest" time="0.012"/>
+  <testcase name="removeNthFromEnd()" classname="LeetCodeProjectsTest" time="0.028"/>
+  <testcase name="fizzBuzz()" classname="LeetCodeProjectsTest" time="0.001"/>
+  <testcase name="hasCycle()" classname="LeetCodeProjectsTest" time="0.003"/>
+  <testcase name="testIsPalindrome()" classname="LeetCodeProjectsTest" time="0.039"/>
+  <testcase name="isPowerOfThree()" classname="LeetCodeProjectsTest" time="0.003"/>
+  <testcase name="romanToInt()" classname="LeetCodeProjectsTest" time="0.003"/>
+  <testcase name="mergeTwoLists()" classname="LeetCodeProjectsTest" time="0.003"/>
+  <testcase name="reverse()" classname="LeetCodeProjectsTest" time="0.002"/>
+  <testcase name="isValidSudoku()" classname="LeetCodeProjectsTest" time="0.062"/>
+  <testcase name="countAndSay()" classname="LeetCodeProjectsTest" time="0.003"/>
+  <testcase name="reverseList()" classname="LeetCodeProjectsTest" time="0.005"/>
+  <testcase name="firstUniqChar()" classname="LeetCodeProjectsTest" time="0.002"/>
+  <testcase name="reverseString()" classname="LeetCodeProjectsTest" time="0.007"/>
+  <testcase name="deleteNode()" classname="LeetCodeProjectsTest" time="0.004"/>
+  <testcase name="countPrimes()" classname="LeetCodeProjectsTest" time="0.005"/>
+  <testcase name="longestCommonPrefix()" classname="LeetCodeProjectsTest" time="0.007"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

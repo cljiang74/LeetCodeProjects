@@ -306,17 +306,67 @@ class LeetCodeProjectsTest {
 
     @Test
     void fizzBuzz() {
+        List<String> result = new ArrayList<>();
+        result.add("1");
+        result.add("2");
+        result.add("Fizz");
+        result.add("4");
+        result.add("Buzz");
+        result.add("Fizz");
+        result.add("7");
+        List<String> output = test.fizzBuzz(7);
+        assertEquals(result, output);
     }
 
     @Test
     void countPrimes() {
+        assertEquals(0, test.countPrimes(1));
+        int primes = test.countPrimes(15);
+        assertEquals(6, primes);
     }
 
     @Test
     void countAndSay() {
+        int input = 4;
+        assertEquals("1211", test.countAndSay(input));
     }
 
     @Test
-    void maxDepth() {
+    void twoSum() {
+        int[] inputArr = {1, 4, 5, 12, 13};
+        int target = 13;
+        assertTrue(Arrays.equals(new int[]{3, 0}, test.twoSum(inputArr, target)));
+    }
+
+    @Test
+    void isValidSudoku() {
+        char[][] testCase = {  {'5','3','.','.','7','.','.','.','.'},
+                               {'6','.','.','1','9','5','.','.','.'},
+                               {'.','9','8','.','.','.','.','6','.'},
+                               {'8','.','.','.','6','.','.','.','3'},
+                               {'4','.','.','8','.','3','.','.','1'},
+                               {'7','.','.','.','2','.','.','.','6'},
+                               {'.','6','.','.','.','.','2','8','.'},
+                               {'.','.','.','4','1','9','.','.','5'},
+                               {'.','.','.','.','8','.','.','7','9'}};
+        assertTrue(test.isValidSudoku(testCase));
+    }
+
+    @Test
+    void reverseString() {
+        char[] input1 = {'c'};
+        char[] input2 = {'h','o','o','r','a','y'};
+        test.reverseString(input1);
+        test.reverseString(input2);
+        assertTrue(Arrays.equals(new char[]{'c'}, input1));
+        assertTrue(Arrays.equals(new char[]{'y','a','r','o','o','h'}, input2));
+    }
+
+    @Test
+    void moveZeroes() {
+        int[] nums = {0,1,0,3,12};
+        int[] expectOutput = {1,3,12,0,0};
+        test.moveZeroes(nums);
+        assertTrue(Arrays.equals(expectOutput, nums));
     }
 }
