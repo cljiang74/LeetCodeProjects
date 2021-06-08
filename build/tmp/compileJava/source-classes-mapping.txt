@@ -1,6 +1,6 @@
-LeetCodeProjects.java
- LeetCodeProjects
-TreeNode.java
- TreeNode
 ListNode.java
  ListNode
+TreeNode.java
+ TreeNode
+LeetCodeProjects.java
+ LeetCodeProjects

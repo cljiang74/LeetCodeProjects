@@ -1,30 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="LeetCodeProjectsTest" tests="20" skipped="0" failures="0" errors="0" timestamp="2021-06-08T17:40:38" hostname="DESKTOP-7UD2T7R" time="0.539">
+<testsuite name="LeetCodeProjectsTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-06-08T18:00:48" hostname="DESKTOP-7UD2T7R" time="0.099">
   <properties/>
-  <testcase name="myAtoi()" classname="LeetCodeProjectsTest" time="0.036"/>
-  <testcase name="rotate()" classname="LeetCodeProjectsTest" time="0.002"/>
-  <testcase name="strStr()" classname="LeetCodeProjectsTest" time="0.001"/>
-  <testcase name="isPalindrome()" classname="LeetCodeProjectsTest" time="0.128"/>
-  <testcase name="removeNthFromEnd()" classname="LeetCodeProjectsTest" time="0.008"/>
-  <testcase name="fizzBuzz()" classname="LeetCodeProjectsTest" time="0.005"/>
-  <testcase name="hasCycle()" classname="LeetCodeProjectsTest" time="0.018"/>
-  <testcase name="testIsPalindrome()" classname="LeetCodeProjectsTest" time="0.001"/>
-  <testcase name="readStringFromBack()" classname="LeetCodeProjectsTest" time="0.002"/>
-  <testcase name="isPowerOfThree()" classname="LeetCodeProjectsTest" time="0.017"/>
-  <testcase name="maxDepth()" classname="LeetCodeProjectsTest" time="0.001"/>
-  <testcase name="romanToInt()" classname="LeetCodeProjectsTest" time="0.001"/>
-  <testcase name="mergeTwoLists()" classname="LeetCodeProjectsTest" time="0.003"/>
-  <testcase name="reverse()" classname="LeetCodeProjectsTest" time="0.007"/>
-  <testcase name="countAndSay()" classname="LeetCodeProjectsTest" time="0.008"/>
-  <testcase name="reverseList()" classname="LeetCodeProjectsTest" time="0.017"/>
-  <testcase name="firstUniqChar()" classname="LeetCodeProjectsTest" time="0.01"/>
-  <testcase name="deleteNode()" classname="LeetCodeProjectsTest" time="0.008"/>
-  <testcase name="countPrimes()" classname="LeetCodeProjectsTest" time="0.002"/>
-  <testcase name="longestCommonPrefix()" classname="LeetCodeProjectsTest" time="0.002"/>
-  <system-out><![CDATA[[c, o, l, o, r, o, l, o, c]
-[c, o, l, o, r, o, l, o, c]
-[o, l, o, l, o, l, o, c]
-[c, o, l, o, l, o, l, o]
-]]></system-out>
+  <testcase name="reverseList()" classname="LeetCodeProjectsTest" time="0.099"/>
+  <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -116,6 +116,32 @@ class LeetCodeProjectsTest {
 
     @Test
     void reverseList() {
+        ListNode head = new ListNode(0);
+        ListNode node1 = new ListNode(1);
+        ListNode node2 = new ListNode(2);
+        ListNode node3 = new ListNode(3);
+        ListNode node4 = new ListNode(4);
+
+        head.next = node1;
+        node1.next = node2;
+        node2.next = node3;
+        node3.next = node4;
+
+        head = test.reverseList(head);
+
+        List<Integer> actualRst = new ArrayList<>();
+        List<Integer> expectedRst = new ArrayList<>();
+        while(head != null) {
+            actualRst.add(head.val);
+            head = head.next;
+        }
+        expectedRst.add(4);
+        expectedRst.add(3);
+        expectedRst.add(2);
+        expectedRst.add(1);
+        expectedRst.add(0);
+
+        assertEquals(expectedRst, actualRst);
     }
 
     @Test

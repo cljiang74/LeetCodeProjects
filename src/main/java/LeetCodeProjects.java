@@ -225,7 +225,6 @@ public class LeetCodeProjects {
         slow.next = head;
 
         //Move fast in front so that the gap between slow and fast becomes n
-
         for (int i = 0; i <= n; i++) {
             fast = fast.next;
         }
@@ -239,6 +238,12 @@ public class LeetCodeProjects {
         return start.next;
     }
 
+    /**
+     * This method reverse a linked List by given head of the node
+     *
+     * @param head  head of the list
+     * @return      the updated head of the new list
+     */
     public ListNode reverseList(ListNode head) {
         /**
          ListNode curtNode = head;
