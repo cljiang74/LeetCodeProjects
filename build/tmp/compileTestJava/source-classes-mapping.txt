@@ -1,2 +1,8 @@
 LeetCodeProjectsTest.java
  LeetCodeProjectsTest
+crackcoding/Chapter1Test.java
+ crackcoding.Chapter1Test
+crackcoding/Chapter2Test.java
+ crackcoding.Chapter2Test
+crackcoding/chapter7/DeckTest.java
+ crackcoding.chapter7.DeckTest
