@@ -1,74 +1,0 @@
-
-7, Heart
-13, Diamond
-
-12, Club
-	5, Club
-
-5, Spade
-	9, Club
-
-9, Heart
-	1, Club
-
-2, Heart
-13, Spade
-12, Diamond
-	4, Club
-
-13, Club
-11, Heart
-9, Diamond
-
-4, Heart
-
-6, Heart
-
-6, Spade
-
-9, Spade
-12, Heart
-	2, Club
-8, Diamond
-
-7, Spade
-	3, Club
-5, Diamond
-3, Diamond
-
-3, Heart
-
-11, Club
-	7, Club
-11, Spade
-
-2, Spade
-4, Diamond
-
-1, Spade
-6, Diamond
-11, Diamond
-
-3, Spade
-12, Spade
-
-1, Heart
-
-8, Spade
-10, Spade
-2, Diamond
-
-4, Spade
-
-5, Heart
-10, Heart
-
-10, Club
-
-8, Heart
-10, Diamond
-7, Diamond
-	8, Club
-1, Diamond
-	6, Club
-13, Heart
